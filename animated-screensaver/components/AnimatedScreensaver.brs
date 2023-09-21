@@ -51,7 +51,7 @@
 
         m.Poster2.uri = m.Poster1.uri
         m.Poster2OpacAnimation.control = "start"
-        if (m.count >= 5)
+        if (m.count >= 9)
             print "resetting count"
             m.count = 0
         else 
@@ -81,7 +81,7 @@
         m.Poster2OpacAnimation = m.top.findNode("Poster2OpacAnimation")
 
         m.pictures = [] ' For loop to load images into m.pictures array
-        for i = 1 to 6
+        for i = 1 to 10
             m.pictures.push("pkg:/images/" + i.toStr() + ".jpg") 'Loads images 1-5 in image folder into m.pictures array
         end for
         m.count = 1
