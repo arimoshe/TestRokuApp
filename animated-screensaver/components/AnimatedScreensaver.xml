@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="AnimatedScreensaver" extends="Scene" >
+
+<script type="text/brightscript" uri = "pkg:/components/AnimatedScreensaver.brs"/>
+
+	<children>
+	
+	<!-- Text Labels for background -->
+	
+		
+	    
+	<!-- Each Poster is grouped with its Animation node -->
+	<!-- For more info on how to manipulate the fields  -->
+	<!-- please see the linked SDK docs for Poster and Aniamtion -->
+		<Poster 
+			id = "Poster1"
+			width="1920" 
+	      	height="1080" 
+			translation = "[0,0]"
+	      	horizAlign="center"
+	      	vertAlign="center"
+		/>
+		<Poster 
+			id = "Poster2"
+			width="1920" 
+	      	height="1080" 
+			translation = "[0,0]"
+	      	horizAlign="center"
+	      	vertAlign="center"
+		/>
+		<Animation 
+			id = "Poster1UpDownAnimation"
+			repeat = "true"
+			duration = "15" easeFunction = "inOutQuad" >
+			<Vector2DFieldInterpolator
+				id = "myInterp"
+				fieldToInterp="Poster1.scale"
+				key="[0.0, 0.25, 0.5, 0.75, 1.0]"
+    			keyValue="[ [1.0, 1.0], [1.25, 1.25], [1.5, 1.5], [1.75, 1.75], [2.0, 2.0]]"
+			/>		
+		</Animation>
+		<Animation 
+			id = "Poster1LeftRightAnimation"
+			repeat = "true"
+			duration = "15" easeFunction = "inOutQuad" >
+			<Vector2DFieldInterpolator
+				id = "myInterp2"
+				fieldToInterp="Poster1.translation"
+				key="[0.0, 1.0]"
+    			keyValue="[ [0.0, 0.0], [-960, -540]]"
+			/>		
+		</Animation>
+		<Animation 
+			id = "Poster2UpDownAnimation"
+			repeat = "true"
+			duration = "15" easeFunction = "inOutQuad" >
+			<Vector2DFieldInterpolator
+				id = "myInterp3"
+				fieldToInterp="Poster2.scale"
+				key="[0.0, 0.25, 0.5, 0.75, 1.0]"
+    			keyValue="[ [1.0, 1.0], [1.25, 1.25], [1.5, 1.5], [1.75, 1.75], [2.0, 2.0]]"
+			/>		
+		</Animation>
+		<Animation 
+			id = "Poster2LeftRightAnimation"
+			repeat = "true"
+			duration = "15" easeFunction = "inOutQuad" >
+			<Vector2DFieldInterpolator
+				id = "myInterp4"
+				fieldToInterp="Poster2.translation"
+				key="[0.0, 1.0]"
+    			keyValue="[ [0.0, 0.0], [-960, -540]]"
+			/>		
+		</Animation>
+		
+		
+	</children>
+</component>
