@@ -16,7 +16,7 @@ sub RunScreenSaver()
     
 
     while(true) 'Message Port that fires every 7 seconds to change value of MyField if the screen isn't closed
-        msg = wait(7000, port)
+        msg = wait(15000, port)
         if (msg <> invalid)
             msgType = type(msg)
             if msgType = "roSGScreenEvent"
@@ -24,8 +24,8 @@ sub RunScreenSaver()
             end if
         else
             m.global.MyField += 10
-            msg = wait(8000, port2) 'Message port that fires 4 seconds after MyField is changed. Must be set to different port than other wait function or it will interfere.
-            m.global.PicSwap += 10
+            ' msg = wait(1000, port2) 'Message port that fires 4 seconds after MyField is changed. Must be set to different port than other wait function or it will interfere.
+            ' m.global.PicSwap += 10
         end if
     end while
 end sub
